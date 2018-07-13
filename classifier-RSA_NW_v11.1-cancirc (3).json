@@ -1,0 +1,437 @@
+{
+	"id": "eb00960d-0409-4707-89f9-0e51953a0302",
+	"version": 31,
+	"modified": "2018-07-12T21:04:32.129415735-04:00",
+	"defaultIncidentType": "",
+	"instanceId": "ddf8d215-dfcb-47eb-8c33-42457e8e7967",
+	"mapping": {
+		"Access": {
+			"internalMapping": {
+				"owner": {
+					"simple": "",
+					"complex": {
+						"root": "assignee",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				}
+			},
+			"dontMapEventToLabels": false
+		},
+		"Exfiltration": {
+			"internalMapping": {
+				"Pivot to NetWitness": {
+					"simple": "",
+					"complex": {
+						"root": "id",
+						"filters": [],
+						"accessor": "",
+						"transformers": [
+							{
+								"operator": "string.concat",
+								"args": {
+									"prefix": {
+										"value": {
+											"simple": "https://10.100.248.9:8015/respond/incident/",
+											"complex": null
+										},
+										"isContext": false
+									},
+									"suffix": {
+										"value": null,
+										"isContext": false
+									}
+								}
+							}
+						]
+					}
+				},
+				"Risk": {
+					"simple": "priority",
+					"complex": null
+				},
+				"Source ID": {
+					"simple": "id",
+					"complex": null
+				},
+				"Source Risk Score": {
+					"simple": "riskScore",
+					"complex": null
+				},
+				"details": {
+					"simple": "",
+					"complex": {
+						"root": "journalEntries",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"owner": {
+					"simple": "assignee",
+					"complex": null
+				}
+			},
+			"dontMapEventToLabels": false
+		},
+		"Exploit": {
+			"internalMapping": {
+				"Risk": {
+					"simple": "",
+					"complex": {
+						"root": "priority",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"Source ID": {
+					"simple": "",
+					"complex": {
+						"root": "id",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"Source Risk Score": {
+					"simple": "",
+					"complex": {
+						"root": "riskScore",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"details": {
+					"simple": "",
+					"complex": {
+						"root": "journalEntries",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"owner": {
+					"simple": "",
+					"complex": {
+						"root": "assignee",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				}
+			},
+			"dontMapEventToLabels": false
+		},
+		"Kiosk": {
+			"internalMapping": {
+				"Affected Entity": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "events.domain",
+						"transformers": []
+					}
+				},
+				"Dest NT Domain": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "events.destination.device.dnsDomain",
+						"transformers": []
+					}
+				},
+				"Dest User": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "events.destination.user.username",
+						"transformers": []
+					}
+				},
+				"Email From": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "events.source.user.emailAddress",
+						"transformers": []
+					}
+				},
+				"Email To": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "events.destination.user.emailAddress",
+						"transformers": []
+					}
+				},
+				"Pivot to NetWitness": {
+					"simple": "",
+					"complex": {
+						"root": "id",
+						"filters": [],
+						"accessor": "",
+						"transformers": [
+							{
+								"operator": "string.concat",
+								"args": {
+									"prefix": {
+										"value": {
+											"simple": "https://10.100.248.9:8015/respond/incident/",
+											"complex": null
+										},
+										"isContext": false
+									},
+									"suffix": {
+										"value": null,
+										"isContext": false
+									}
+								}
+							}
+						]
+					}
+				},
+				"RE Assignee": {
+					"simple": "",
+					"complex": {
+						"root": "assignee",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"RE Incident Source": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "source",
+						"transformers": []
+					}
+				},
+				"RE Journal Entries": {
+					"simple": "",
+					"complex": {
+						"root": "journalEntries",
+						"filters": [],
+						"accessor": "notes",
+						"transformers": [
+							{
+								"operator": "general.join",
+								"args": {
+									"separator": {
+										"value": {
+											"simple": "_",
+											"complex": null
+										},
+										"isContext": false
+									}
+								}
+							},
+							{
+								"operator": "string.toUpperCase",
+								"args": {}
+							}
+						]
+					}
+				},
+				"RE LastUpdateBy": {
+					"simple": "",
+					"complex": {
+						"root": "lastUpdatedBy",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"Source ID": {
+					"simple": "id",
+					"complex": null
+				},
+				"Source Risk Score": {
+					"simple": "",
+					"complex": {
+						"root": "riskScore",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"Src": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "events.source.device.ipAddress",
+						"transformers": []
+					}
+				},
+				"Src NT Domain": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "events.source.device.dnsDomain",
+						"transformers": []
+					}
+				},
+				"Src User": {
+					"simple": "",
+					"complex": {
+						"root": "alerts",
+						"filters": [],
+						"accessor": "events.source.user.username",
+						"transformers": []
+					}
+				},
+				"details": {
+					"simple": "summary",
+					"complex": null
+				},
+				"owner": {
+					"simple": "",
+					"complex": {
+						"root": "assignee",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"severity": {
+					"simple": "priority",
+					"complex": null
+				}
+			},
+			"dontMapEventToLabels": false
+		},
+		"Malware": {
+			"internalMapping": {
+				"Pivot to NetWitness": {
+					"simple": "",
+					"complex": {
+						"root": "id",
+						"filters": [],
+						"accessor": "",
+						"transformers": [
+							{
+								"operator": "string.concat",
+								"args": {
+									"prefix": {
+										"value": {
+											"simple": "https://10.100.248.9:8015/respond/incident/",
+											"complex": null
+										},
+										"isContext": false
+									},
+									"suffix": {
+										"value": null,
+										"isContext": false
+									}
+								}
+							}
+						]
+					}
+				},
+				"Risk": {
+					"simple": "priority",
+					"complex": null
+				},
+				"Source ID": {
+					"simple": "id",
+					"complex": null
+				},
+				"Source Risk Score": {
+					"simple": "riskScore",
+					"complex": null
+				},
+				"details": {
+					"simple": "",
+					"complex": {
+						"root": "journalEntries",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				},
+				"owner": {
+					"simple": "assignee",
+					"complex": null
+				}
+			},
+			"dontMapEventToLabels": false
+		},
+		"Phishing": {
+			"internalMapping": {
+				"Pivot to NetWitness": {
+					"simple": "",
+					"complex": {
+						"root": "id",
+						"filters": [],
+						"accessor": "",
+						"transformers": [
+							{
+								"operator": "string.concat",
+								"args": {
+									"prefix": {
+										"value": {
+											"simple": "https://10.100.248.9:8015/respond/incident/",
+											"complex": null
+										},
+										"isContext": false
+									},
+									"suffix": {
+										"value": null,
+										"isContext": false
+									}
+								}
+							}
+						]
+					}
+				},
+				"Source ID": {
+					"simple": "id",
+					"complex": null
+				},
+				"Source Risk Score": {
+					"simple": "riskScore",
+					"complex": null
+				},
+				"details": {
+					"simple": "",
+					"complex": {
+						"root": "journalEntries",
+						"filters": [],
+						"accessor": "",
+						"transformers": []
+					}
+				}
+			},
+			"dontMapEventToLabels": false
+		}
+	},
+	"unclassifiedCases": {},
+	"incidentSamples": [],
+	"custom": true,
+	"transformer": {
+		"simple": "",
+		"complex": {
+			"root": "categories",
+			"filters": [],
+			"accessor": "name",
+			"transformers": []
+		}
+	},
+	"keyTypeMap": {
+		"Adminware": "Kiosk",
+		"Unknown": "Unclassified"
+	},
+	"brandName": "RSA NetWitness v11.1",
+	"instanceName": "RSA NW v11.1-cancirc"
+}
